@@ -24,7 +24,8 @@
 % if W_j \subsetneq W_k then
 % colorlist for W_j should preceed colorlist for W_k in inv.txt.)
 
-% bif.txt with subsets:  line m  * * d * * means W_m \subsetneq W_d
+% bif.txt with subsets:  line m  * * d * * means W_m \subseteq W_d
+
 function BLIS_2023b
 clear;
 global jobs bcnt speed smin smax verbosity blist
@@ -39,13 +40,13 @@ SaveThisRun = false; % saves .txt of Command Window and .pdf of figure.
 
 speed = .1;     % distance between computed points in bifurcation diagram
 
-maxLevel = 14; % Follow daughters to this level. (First branch is level 0.)
+maxLevel = 1; % Follow daughters to this level. (First branch is level 0.)
 
 plot_bifpoints = true;
 plot_foldpoints = false;
 plot_branch_as_line = true; % false useful for setting speed
 
-smin = -3.5; smax = 4.5;        % bifurcation parameter window
+smin = -4; smax = 4.5;        % bifurcation parameter window
 ymax = 2;  %default 1000. Needed with asymptotically linear nonlinearity
 
 maxNumBranches  = 50;  %  Default is 50
@@ -60,6 +61,7 @@ if startWithTrivialBranch
     %sInit = 70;  % un-comment this line to set sInit != smin
     usInit = [sInit]; vsInit = [1]; jInit = 1; % trivial branch
     % Needs sInit >= smin with vsInit = [1] (going right).
+    % or sInit <= smax with vsInit = [-1] (going left).
     
 else
     %usInit = [0.9003; -1.63; 2]; vsInit = [-1; -1; 3]; jInit = 6; % diamond
@@ -74,8 +76,9 @@ end
 
 % The following parameters are more spread out
 
-% make the last definition the one you want to plot, or use comments
-% Search 'LaTeX' to see the switch statement that uses these y strings
+% You can change the label for the schematic function, using LaTex.  
+% If you do, search for 'switch y' and change those y strings.
+% The value of those y strings needs to agree with the y defined here.
 
 % CHOOSE SCHEMATIC FUNCTION WITH THE NEXT LINE
 switch 4 % change integer to get desired schematic function y vs. s
@@ -146,6 +149,7 @@ switch 1 % Change integer and possibly c5 or c2 to get desired nonlinearity
         f    = @(u,s) s*u + cs*(tanh(u) - u);
         fp   = @(u,s) s + cs*(sech(u).^2 -1);
         dfds = @(u,s) u;
+
     case 6    % gives non-BLIS bifurcation
         f    = @(u,s) s*s - u.^2;
         fp   = @(u,s) -2*u;
