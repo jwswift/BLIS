@@ -1,0 +1,295 @@
+-------------------------------------------------------------
+Solve f(u_i,s) - (M u)_i = 0, for i = 1, ..., N, 
+where M is a Weighted Adjacency Matrix 
+The unknown u is in R^N , and the function f: R^2 -> R is 
+threaded over u to get a function f: R^N x R -> R^N. 
+So the program really solves f(u,s) - Mu = 0.
+
+This run was made at date_time 2023-08-14_22-15
+The 4 input .txt files are in the directory diamond
+f(u,s) = @(u,s)s*u+u.^3-c5*u.^5
+c5 = 0
+smin = -4,  smax = 4.5, speed = 0.1
+maxNumBranches = 50,  maxLevel = 14, verbosity = 1.
+Start on trivial branch at s = -4 with vs = 1
+
+N = 4
+The first 4 eigenvalues of the Weighted Adjacency Matrix are
+0   2   4   4   
+
+-------- branch 1 -------
+Starting branch 1 at s = -4, y = 0, in invariant subspace W_1 (black).
+Array shows history of branch numbers, with invariant subspace below:
+     1
+     1
+
+MI =  0 initially.
+MI -> 1 between s = 2.41e-15 and s = 0.1 with daughter in W_2.
+        Bifpoint is at s = 0.000000, y = 0
+        pitchfork bifurcation to W_2: evec = (1.0000)
+MI -> 2 between s = 2 and s = 2.1 with daughter in W_5.
+        Bifpoint is at s = 2.000000, y = 0
+        pitchfork bifurcation to W_5: evec = (1.0000)
+MI -> 4 between s = 4 and s = 4.1 with daughters in W_3, W_4, and W_6.
+        Bifpoint is at s = 4.000000, y = 0
+        pitchfork bifurcation to W_3: evec = (1.0000)
+        Bifpoint is at s = 4.000000, y = 0
+        pitchfork bifurcation to W_4: evec = (1.0000)
+        Bifpoint is at s = 4.000000, y = 0
+        pitchfork bifurcation to W_6: evec = (0.3162, -0.9487)
+
+Last point: s = 4.5, y = 0.  uj in W_j and u in R^N follow.
+uj =  
+ u = (0, 0, 0, 0)
+eigenvalues are -4.50  -2.50  -0.50  -0.50  
+
+-------- branch 2 -------
+Starting branch 2 at s = 0, y = 0, in invariant subspace W_2 (red).
+Array shows history of branch numbers, with invariant subspace below:
+     1     2
+     1     2
+
+MI =  1 initially.
+MI -> 2 between s = -0.934 and s = -1 with daughter in W_10.
+        Bifpoint is at s = -1.000000, y = 1
+        pitchfork bifurcation to W_10: evec = (-0.7071, -0.0000, 0.7071)
+MI -> 4 between s = -1.92 and s = -2 with daughters in W_6, and W_7.
+        Bifpoint is at s = -2.000000, y = 1.41421
+        transcritical bifurcation to W_6: evec = (0.3162, -0.9487)
+        Bifpoint is at s = -2.000000, y = 1.41421
+        transcritical bifurcation to W_7: evec = (-0.7071, 0.7071)
+
+Last point: s = -4, y = 2.  uj in W_j and u in R^N follow.
+uj = 2 
+ u = (2, 2, 2, 2)
+eigenvalues are -8.00  -6.00  -4.00  -4.00  
+
+-------- branch 3 -------
+Starting branch 3 at s = 2, y = 0, in invariant subspace W_5 (green).
+Array shows history of branch numbers, with invariant subspace below:
+     1     3
+     1     5
+
+MI =  2 initially.
+
+Last point: s = -4, y = 1.2247.  uj in W_j and u in R^N follow.
+uj = 2.4495 
+ u = (2.4495, 0, -2.4495, 0)
+eigenvalues are -12.22  -12.00  6.22  8.00  
+
+-------- branch 4 -------
+Starting branch 4 at s = 4, y = 0, in invariant subspace W_3 (gold).
+Array shows history of branch numbers, with invariant subspace below:
+     1     4
+     1     3
+
+MI =  4 initially.
+
+Last point: s = -0.076973, y = 2.0192.  uj in W_j and u in R^N follow.
+uj = -2.0192 
+ u = (-2.0192, 2.0192, -2.0192, 2.0192)
+eigenvalues are -12.15  -10.15  -8.15  -8.15  
+
+-------- branch 5 -------
+Starting branch 5 at s = 4, y = 0, in invariant subspace W_4 (blue).
+Array shows history of branch numbers, with invariant subspace below:
+     1     5
+     1     4
+
+MI =  4 initially.
+MI -> 3 between s = 3.08 and s = 3 with daughter in W_9.
+        Bifpoint is at s = 3.000000, y = 0.5
+        pitchfork bifurcation to W_9: evec = (0.8165, -0.4082, -0.4082)
+MI -> 2 between s = 2.05 and s = 1.96 with daughter in W_8.
+        Bifpoint is at s = 2.000000, y = 0.707107
+        pitchfork bifurcation to W_8: evec = (1.0000, 0.0000)
+
+Last point: s = -4, y = 1.4142.  uj in W_j and u in R^N follow.
+uj = -2.8284 
+ u = (0, -2.8284, 0, 2.8284)
+eigenvalues are -18.17  -16.00  6.00  6.17  
+
+-------- branch 6 -------
+Starting branch 6 at s = 4, y = 0, in invariant subspace W_6 (cyan).
+Array shows history of branch numbers, with invariant subspace below:
+     1     6
+     1     6
+
+MI =  3 initially.
+MI -> 4 between s = 2.56 and s = 2.48 with daughter in W_9.
+        Bifpoint is at s = 2.500000, y = 0.883883
+        transcritical bifurcation to W_9: evec = (-0.4472, 0.0000, 0.8944)
+
+Last point: s = -1.0588, y = 2.0119.  uj in W_j and u in R^N follow.
+uj = 1.8477 -2.5044 
+ u = (1.8477, -2.5044, 1.8477, 1.8477)
+eigenvalues are -15.19  -7.76  -7.18  -5.18  
+
+-------- branch 7 -------
+Starting branch 7 at s = -1, y = 1, in invariant subspace W_10 (plumb).
+Array shows history of branch numbers, with invariant subspace below:
+     1     2     7
+     1     2    10
+
+MI =  2 initially.
+MI -> 1 at fold point s = -0.994, y = 0.98. 
+
+Last point: s = -4, y = 0.84637.  uj in W_j and u in R^N follow.
+uj = 2.3738 0.43336 0.14496 
+ u = (2.3738, 0.43336, 0.14496, 0.43336)
+eigenvalues are -11.03  4.33  7.17  7.44  
+
+-------- branch 8 -------
+Starting branch 8 at s = -2, y = 1.4142, in invariant subspace W_6 (cyan).
+Array shows history of branch numbers, with invariant subspace below:
+     1     2     8
+     1     2     6
+
+MI =  3 initially.
+
+Last point: s = -4, y = 1.8617.  uj in W_j and u in R^N follow.
+uj = 2.1173 1.0949 
+ u = (2.1173, 1.0949, 2.1173, 2.1173)
+eigenvalues are -8.70  -7.45  -5.45  3.65  
+
+-------- branch 9 -------
+Starting branch 9 at s = -2, y = 1.4142, in invariant subspace W_6 (cyan).
+Array shows history of branch numbers, with invariant subspace below:
+     1     2     9
+     1     2     6
+
+MI =  3 initially.
+MI -> 2 between s = -1.71 and s = -1.7 with daughter in W_11.
+        Bifpoint is at s = -1.701256, y = 1.24056
+        pitchfork bifurcation to W_11: evec = (0.7071, -0.0000, -0.7071, 0.0000)
+MI -> 1 at fold point s = -1.7, y = 1.23. 
+
+Last point: s = -4, y = 1.032.  uj in W_j and u in R^N follow.
+uj = 0.53518 2.5226 
+ u = (0.53518, 2.5226, 0.53518, 0.53518)
+eigenvalues are -12.27  4.32  5.14  7.14  
+
+-------- branch 10 -------
+Starting branch 10 at s = -2, y = 1.4142, in invariant subspace W_7 (purple).
+Array shows history of branch numbers, with invariant subspace below:
+     1     2    10
+     1     2     7
+
+MI =  3 initially.
+MI -> 2 between s = -2.2 and s = -2.27 with daughter in W_10.
+        Bifpoint is at s = -2.242641, y = 1.4355
+        pitchfork bifurcation to W_10: evec = (-0.7071, 0.0000, 0.7071)
+
+Last point: s = -4, y = 1.5811.  uj in W_j and u in R^N follow.
+uj = 0.87403 2.2882 
+ u = (0.87403, 2.2882, 0.87403, 2.2882)
+eigenvalues are -10.00  -7.71  3.71  4.00  
+
+-------- branch 11 -------
+Starting branch 11 at s = -2, y = 1.4142, in invariant subspace W_7 (purple).
+Array shows history of branch numbers, with invariant subspace below:
+     1     2    11
+     1     2     7
+
+MI =  2 initially.
+
+Last point: s = -4, y = 1.5811.  uj in W_j and u in R^N follow.
+uj = 2.2882 0.87403 
+ u = (2.2882, 0.87403, 2.2882, 0.87403)
+eigenvalues are -10.00  -9.71  4.00  5.71  
+
+-------- branch 12 -------
+Starting branch 12 at s = 3, y = 0.5, in invariant subspace W_9 (orange).
+Array shows history of branch numbers, with invariant subspace below:
+     1     5    12
+     1     4     9
+
+MI =  4 initially.
+        !Branch is daughter of a transcritical bifurcation near last point, stop following it!
+
+Last point: s = 2.5355, y = 0.86899.  uj in W_j and u in R^N follow.
+uj = -0.68152 -0.71571 1.3972 
+ u = (-0.68152, -0.71571, -0.68152, 1.3972)
+eigenvalues are -6.30  -2.07  -1.93  -0.02  
+
+-------- branch 13 -------
+Starting branch 13 at s = 2, y = 0.70711, in invariant subspace W_8 (brown).
+Array shows history of branch numbers, with invariant subspace below:
+     1     5    13
+     1     4     8
+
+MI =  3 initially.
+MI -> 4 between s = 1.73 and s = 1.68 with daughter in W_11.
+        Bifpoint is at s = 1.697224, y = 1.03387
+        pitchfork bifurcation to W_11: evec = (0.6768, -0.2049, 0.6768, -0.2049)
+
+Last point: s = -1.068, y = 2.0014.  uj in W_j and u in R^N follow.
+uj = 1.7516 -2.2512 
+ u = (1.7516, -2.2512, -1.7516, 2.2512)
+eigenvalues are -12.74  -10.14  -6.14  -5.53  
+
+-------- branch 14 -------
+Starting branch 14 at s = 2.5, y = 0.88388, in invariant subspace W_9 (orange).
+Array shows history of branch numbers, with invariant subspace below:
+     1     6    14
+     1     6     9
+
+MI =  4 initially.
+        !Branch is daughter of a pitchfork bifurcation near last point, stop following it!
+
+Last point: s = 2.9995, y = 0.51111.  uj in W_j and u in R^N follow.
+uj = -0.022161 -0.98898 1.0111 
+ u = (-0.022161, -0.98898, -0.022161, 1.0111)
+eigenvalues are -5.00  -2.00  -1.00  -0.00  
+
+-------- branch 15 -------
+Starting branch 15 at s = 2.5, y = 0.88388, in invariant subspace W_9 (orange).
+Array shows history of branch numbers, with invariant subspace below:
+     1     6    15
+     1     6     9
+
+MI =  3 initially.
+
+Last point: s = -2.9552, y = 2.009.  uj in W_j and u in R^N follow.
+uj = 2.4403 -2.7978 0.35743 
+ u = (2.4403, -2.7978, 2.4403, 0.35743)
+eigenvalues are -18.00  -12.91  -12.58  5.71  
+
+-------- branch 16 -------
+Starting branch 16 at s = -1.7013, y = 1.2406, in invariant subspace W_11 (black).
+Array shows history of branch numbers, with invariant subspace below:
+     1     2     9    16
+     1     2     6    11
+
+MI =  2 initially.
+
+Last point: s = -4, y = 1.4543.  uj in W_j and u in R^N follow.
+uj = 2.127 2.3506 0.55105 0.78838 
+ u = (2.127, 2.3506, 0.55105, 0.78838)
+eigenvalues are -10.17  -7.19  4.29  6.15  
+
+-------- branch 17 -------
+Starting branch 17 at s = -2.2426, y = 1.4355, in invariant subspace W_10 (plumb).
+Array shows history of branch numbers, with invariant subspace below:
+     1     2    10    17
+     1     2     7    10
+
+MI =  3 initially.
+
+Last point: s = -4, y = 1.7763.  uj in W_j and u in R^N follow.
+uj = 1.9375 2.1759 0.8158 
+ u = (1.9375, 2.1759, 0.8158, 2.1759)
+eigenvalues are -8.91  -6.20  -4.72  4.17  
+
+-------- branch 18 -------
+Starting branch 18 at s = 1.6972, y = 1.0339, in invariant subspace W_11 (black).
+Array shows history of branch numbers, with invariant subspace below:
+     1     5    13    18
+     1     4     8    11
+
+MI =  3 initially.
+
+Last point: s = -3.7502, y = 2.0042.  uj in W_j and u in R^N follow.
+uj = 0.047605 -2.637 -2.4214 2.9106 
+ u = (0.047605, -2.637, -2.4214, 2.9106)
+eigenvalues are -19.13  -14.15  -11.42  5.83  
