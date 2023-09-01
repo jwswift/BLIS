@@ -40,7 +40,7 @@ SaveThisRun = false; % saves .txt of Command Window and .pdf of figure.
 
 speed = .1;     % distance between computed points in bifurcation diagram
 
-maxLevel = 1; % Follow daughters to this level. (First branch is level 0.)
+maxLevel = 10; % Follow daughters to this level. (First branch is level 0.)
 
 plot_bifpoints = true;
 plot_foldpoints = false;
